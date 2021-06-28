@@ -1,0 +1,53 @@
+/* In order to apply styles to our button we need to target the class given
+ to the anchor element in your HTML pane by '.' followed by the class name given to the element <a> */
+/* the properties: values I've given to btn-position, moves the button to the center of the page */
+
+/* Play around with the values and see what happens :-) */
+/*https://www.w3schools.com/cssref/pr_class_position.asp*/
+.btn-position {
+    position: absolute; /*if you don't specify absolute you cannot do top,left below (so you can force the element to where you want*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*try different numbers to get to the centre of page*/
+  }
+  
+  .btn-style {
+    /*Use the width property to change the width of the button*/
+    width: 150px;
+    /*Padding property extends the content area*/
+    padding: 10px;
+    /*We give the text a sans-serif font*/
+    font-family: sans-serif;
+    /*Use the font-size property to make the text bigger or smaller*/
+    font-size: 25px;
+    /* Center the text within the anchor */
+    text-align: center;
+    /* anchor element applies an underline to the text (this is a default style),
+     so we remove it by setting the text-decoration property to none. */
+    text-decoration: none;
+    /* change the background colour of the anchor */
+    /* for more colours check out https://flatuicolors.com/ */
+    background-color: #1dcaff;
+    /* change text color to white */
+    color: white;
+    /* make the corners rounder */
+    border-radius: 15px;
+  }
+  
+  /* When I hover over the button, I want these effects to be applied to the button */
+  .btn-style:hover {
+    background-color: #83e2ff;
+  }
+  
+  /* when the user clicks on the anchor, it activates and in that state we want it 
+  to change the color to yellow*/
+  .btn-style:active {
+    background-color: #f1c40f;
+  }
+  
+  /*when the link has been visited we want the background colour to change to green */
+  .btn-style:visited {
+    background-color: #2ecc71;
+  }
+  
+  

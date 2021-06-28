@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+* {
+  box-sizing: border-box;
+  /*background: black; so we can see the svg, remove it after*/
+}/*standard to any css*/
+
+body {
+  height: 100vh;
+    /*100%height*/
+  display: flex;
+    /*to enable flex content to its children*/
+  justify-content: center;
+    /*alignment along main axis(left to right)*/
+  align-items: center;
+    /*alignment along cross axis(top to bottom)*/
+}
+
+.wrapper {
+  display: flex;
+  /*to enable flex content to its children*/
+  justify-content: center;
+  /*alignment along cross axis(top to bottom)*/
+}
+
+.cta { /*call to action*/
+    display: flex;
+    /*to enable flex content to its children*/
+    padding: 10px 45px;
+    /*add padding to text and the svg*/
+    text-decoration: none;
+    /*no pre-setting, no line under the text*/
+    font-family: 'Poppins', sans-serif;
+    /*set font, size and colour of text*/
+    font-size: 40px;
+    color: white;
+    background: #6225E6;
+    /*set background of whole thing: content and padding*/
+    transition: 1s;
+    /*time for transition*/
+    box-shadow: 6px 6px 0 black;
+    /*shadow of the div: content and padding*/
+    transform: skewX(-15deg);
+    /*skew - opposite direction by 15 degrees*/
+}
+
+.cta:focus { /*:focus selector is allowed on elements that accept keyboard events or other user inputs*/
+   outline: none; /* remove all pre-setting for outline style, width and colour: the margin(outline)*/
+}
+
+.cta:hover {/*takes 0.5s to transit from shadow of black to yellow*/
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638; /*The optional third value adds a blur effect to the shadow.*/
+}/*The first value is the horizontal offset and the second value is the vertical offset. */
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}/*set default so can have smooth transition*/
+
+.cta:hover span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}/*set transition when hover*/
+
+span {
+    transform: skewX(15deg) 
+}/*skew x for NEXT and arrows */
+
+span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%; 
+}/*try different numbers*/
+/*this whole set of code above makes the arrows at the centre inline with wording
+and moved right so it's on the edge of button space*/
+  
+/**************SVG****************/
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+/*move path one and two be at the same place as arrow three*/
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+/*three has no change in position
+others go back to original postion (0%) - collapse
+then animate arrows with changing colour in a sequence*/
+
+/* SVG animations */
+
+@keyframes color_anim{
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #FBC638;
+    }
+    100% {
+        fill: white;
+    }
+}
+/*different colours for arrow*/
